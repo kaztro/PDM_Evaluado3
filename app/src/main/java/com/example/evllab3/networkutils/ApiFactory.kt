@@ -34,6 +34,6 @@ object ApiFactory {
         .addCallAdapterFactory(CoroutineCallAdapterFactory())
         .build()
 
-    val ombdApi: OmbdApi = retrofit().create(OmbdApi::class.java)
+    val ombdApi: Omdb = retrofit().create(Omdb::class.java)
 
 }

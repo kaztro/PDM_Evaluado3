@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 data class Movie (
 
     @PrimaryKey
-    val imdbID: String = "N/A",
+    val omdbID: String = "N/A",
 
     val Title: String = "N/A",
 
