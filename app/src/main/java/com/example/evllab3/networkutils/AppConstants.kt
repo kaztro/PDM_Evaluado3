@@ -7,7 +7,6 @@ import com.example.evllab3.dabase.models.MoviePreview
 
 object AppConstants {
 
-    val ombdApiKey = BuildConfig.OMBD_API_KEY
     val ADD_TASK_REQUEST = 1
     val emptyMoviesPreview = ArrayList<MoviePreview>()
     val emptyMovies = ArrayList<Movie>()
