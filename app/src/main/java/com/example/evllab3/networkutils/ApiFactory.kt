@@ -8,10 +8,11 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 
 object ApiFactory {
 
+    val API_TOKEN = "9ccb1314"
     private val authInterceptor = Interceptor { chain ->
         val newUrl = chain.request().url()
             .newBuilder()
-            .addQueryParameter("apikey", AppConstants.ombdApiKey)
+            .addQueryParameter("apikey", API_TOKEN)
             .build()
 
         val newRequest = chain.request()
