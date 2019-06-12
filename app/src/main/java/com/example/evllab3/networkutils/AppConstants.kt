@@ -1,7 +1,6 @@
 package com.example.evllab3.networkutils
 
 import android.util.Log
-import com.example.evllab3.BuildConfig
 import com.example.evllab3.dabase.models.Movie
 import com.example.evllab3.dabase.models.MoviePreview
 

@@ -19,7 +19,7 @@ class MovieViewModel(val app: Application): AndroidViewModel(app){
     private val repository: MovieRepository
 
     init {
-        val moviewDao = MovieDataBase.getDatabase(app).dao()
+        val movieDao = MovieDataBase.getDatabase(app).dao()
         repository = MovieRepository(movieDao, ApiFactory.ombdApi)
     }
 
