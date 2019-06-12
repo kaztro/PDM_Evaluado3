@@ -1,4 +1,4 @@
-package com.example.evllab3.dabase.models
+package com.example.evllab3.database.models
 
 import androidx.room.Entity
 

@@ -6,9 +6,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.evllab3.R
-import com.example.evllab3.dabase.models.MoviePreview
+import com.example.evllab3.database.models.MoviePreview
+import kotlinx.android.synthetic.main.cardview_preview.view.*
 
-class PreviewAdapter(var movies: List<MoviePreview>, val clickListener: (MoviePreview, View) -> Unit) : RecyclerView.Adapter<PreviewAdapter.ViewHolder>(){
+class PreviewAdapter(private var movies: List<MoviePreview>, private val clickListener: (MoviePreview, View) -> Unit) : RecyclerView.Adapter<PreviewAdapter.ViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.cardview_preview, parent, false)
@@ -29,11 +30,11 @@ class PreviewAdapter(var movies: List<MoviePreview>, val clickListener: (MoviePr
             Glide.with(itemView.context)
                 .load(movie.Poster)
                 .placeholder(R.drawable.ic_launcher_background)
-                .into(preview_image_cv)
-            preview_title_cv.text = movie.Title
-            preview_year_cv.text = movie.Year
-            if (movie.selected) preview_selected_cv.visibility = View.VISIBLE else preview_selected_cv.visibility = View.GONE
-            this.setOnClickListener { clickListener(movie, preview_selected_cv) }
+                .into(cv_preview_image)
+            cv_preview_title.text = movie.Title
+            cv_preview_year.text = movie.Year
+            if (movie.Selected) cv_preview_selected.visibility = View.VISIBLE else cv_preview_selected.visibility = View.GONE
+            this.setOnClickListener { clickListener(movie, cv_preview_selected) }
         }
     }
 }

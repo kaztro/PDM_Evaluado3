@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.evllab3.R
-import com.example.evllab3.dabase.models.Movie
+import com.example.evllab3.database.models.Movie
 import kotlinx.android.synthetic.main.cardview_movie.view.*
 
 class MovieAdapter(var movies: List<Movie>, val clickListener: (Movie) -> Unit) : RecyclerView.Adapter<MovieAdapter.ViewHolder>(){

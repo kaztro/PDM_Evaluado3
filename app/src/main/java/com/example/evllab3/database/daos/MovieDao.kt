@@ -1,11 +1,11 @@
-package com.example.evllab3.dabase.daos
+package com.example.evllab3.database.daos
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.example.evllab3.dabase.models.Movie
+import com.example.evllab3.database.models.Movie
 
 @Dao
 interface MovieDao {

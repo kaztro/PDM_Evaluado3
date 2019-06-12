@@ -5,9 +5,9 @@ import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.evllab3.dabase.MovieDataBase
-import com.example.evllab3.dabase.models.Movie
-import com.example.evllab3.dabase.models.MoviePreview
+import com.example.evllab3.database.MovieDataBase
+import com.example.evllab3.database.models.Movie
+import com.example.evllab3.database.models.MoviePreview
 import com.example.evllab3.networkutils.ApiFactory
 import com.example.evllab3.repository.MovieRepository
 import kotlinx.coroutines.CoroutineScope
