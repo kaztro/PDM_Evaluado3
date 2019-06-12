@@ -5,26 +5,17 @@ import androidx.lifecycle.LiveData
 import com.example.evllab3.dabase.daos.MovieDao
 import com.example.evllab3.dabase.models.Movie
 import com.example.evllab3.dabase.models.MoviePreview
+import com.example.evllab3.dabase.models.OmbdMovieResponse
 import com.example.evllab3.networkutils.Omdb
+import kotlinx.coroutines.Deferred
+import retrofit2.Response
 
 
-class MovieRepository(private val movieDao: MovieDao, private val api: Omdb) : BaseRepository() {
+class MovieRepository(private val movieDao: MovieDao, private val api: Omdb){
 
-    suspend fun getMoviesByName(name: String) : MutableList<MoviePreview>? {
-        val moviesResponse = safeApiCall(
-                call = { api.getMoviesByName(name).await()},
-                errorMessage = "Error Fetching Movies by Name"
-        )
-        return moviesResponse?.Search?.toMutableList()
-    }
+    fun retrieveMoviesByNameAsync(name:String): Deferred<Response<OmbdMovieResponse>> = api.getMoviesByName(name)
 
-    suspend fun getMovieByTitle(name: String) : Movie? {
-        val movieResponse = safeApiCall(
-            call = { api.getMovieByTitle(name).await()},
-            errorMessage = "Error Fetching Movie by Title"
-        )
-        return movieResponse
-    }
+    fun retrieveMoviesByTitleAsync(name:String): Deferred<Response<Movie>> = api.getMovieByTitle(name)
 
     @WorkerThread
     suspend fun insert(movie: Movie) = movieDao.insert(movie)
