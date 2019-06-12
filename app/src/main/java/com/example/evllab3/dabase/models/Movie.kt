@@ -27,7 +27,7 @@ data class Movie (
 
     val Language:String = "N/A",
 
-    val imdbRating:String = "N/A",
+    val omdbRating:String = "N/A",
 
     val Poster:String = "N/A"
 )
