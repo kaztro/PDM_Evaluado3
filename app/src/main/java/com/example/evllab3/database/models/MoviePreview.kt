@@ -1,4 +1,4 @@
-package com.example.evllab3.dabase.models
+package com.example.evllab3.database.models
 
 import androidx.room.Entity
 
@@ -9,7 +9,7 @@ data class MoviePreview (
 
     val Year: String = "N/A",
 
-    val imdbID: String = "N/A",
+    val omdbID: String = "N/A",
 
     val Type: String = "N/A",
 

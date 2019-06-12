@@ -1,11 +1,11 @@
-package com.example.evllab3.dabase
+package com.example.evllab3.database
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.evllab3.dabase.daos.MovieDao
-import com.example.evllab3.dabase.models.Movie
+import com.example.evllab3.database.daos.MovieDao
+import com.example.evllab3.database.models.Movie
 
 @Database(entities = [Movie::class], version = 2, exportSchema = false)
 abstract class MovieDataBase : RoomDatabase() {

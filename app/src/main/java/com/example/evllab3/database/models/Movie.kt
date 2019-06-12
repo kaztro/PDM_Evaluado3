@@ -1,4 +1,4 @@
-package com.example.evllab3.dabase.models
+package com.example.evllab3.database.models
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -27,7 +27,7 @@ data class Movie (
 
     val Language:String = "N/A",
 
-    val imdbRating:String = "N/A",
+    val omdbRating:String = "N/A",
 
     val Poster:String = "N/A"
 )

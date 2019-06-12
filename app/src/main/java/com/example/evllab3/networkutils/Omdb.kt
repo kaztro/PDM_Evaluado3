@@ -1,7 +1,7 @@
 package com.example.evllab3.networkutils
 
-import com.example.evllab3.dabase.models.Movie
-import com.example.evllab3.dabase.models.OmbdMovieResponse
+import com.example.evllab3.database.models.Movie
+import com.example.evllab3.database.models.OmbdMovieResponse
 import kotlinx.coroutines.Deferred
 import retrofit2.Response
 import retrofit2.http.GET

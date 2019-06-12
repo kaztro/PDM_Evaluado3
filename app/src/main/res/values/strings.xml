@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">EvlLab3</string>
-    <string name="no_value">N/A</string>
+    <string name="title">TITLE</string>
+    <string name="rate">RATE</string>
+    <string name="PLOT">PLOT PLOT PLOT PLOT PLOT PLOT</string>
+    <string name="runtime">THE RUNTIME</string>
+    <string name="the_year">The Year</string>
 </resources>

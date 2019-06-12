@@ -1,8 +1,8 @@
 package com.example.evllab3.networkutils
 
 import android.util.Log
-import com.example.evllab3.dabase.models.Movie
-import com.example.evllab3.dabase.models.MoviePreview
+import com.example.evllab3.database.models.Movie
+import com.example.evllab3.database.models.MoviePreview
 
 object AppConstants {
 
