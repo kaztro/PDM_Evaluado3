@@ -15,7 +15,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class MovieViewModel(val app: Application): AndroidViewModel(app){
-
     private val repository: MovieRepository
 
     init {
@@ -25,24 +24,40 @@ class MovieViewModel(val app: Application): AndroidViewModel(app){
 
     private val scope = CoroutineScope(Dispatchers.IO)
 
-    private val movieList = MutableLiveData<MutableList<MoviePreview>>()
+    private val movieslist = MutableLiveData<MutableList<MoviePreview>>()
 
     private val movieResult = MutableLiveData<Movie>()
 
-    fun fetchMovie(name:String){
+    fun fetchMovie(name: String){
         scope.launch {
-            val response = repository.retrieveMoviesByTitleAsync(name).await()
+            val response=repository.retrieveMoviesByNameAsync(name).await()
+            if(response.isSuccessful){
+                when(response.code()){
+                    200->movieslist.postValue(response.body()?.Search?.toMutableList()?:arrayListOf(MoviePreview(Title = "Dummy 1"), MoviePreview(Title = "Dummy 2")))
+                }
+            }else{
+                Toast.makeText(app, "Ocurrio un error", Toast.LENGTH_LONG).show()
+            }
+        }
+    }
+
+    fun getMovieListVM(): LiveData<MutableList<MoviePreview>> = movieslist
+
+    fun fetchMovieByTitle(name: String){
+        scope.launch {
+            val response=repository.retrieveMoviesByTitleAsync(name).await()
             if(response.isSuccessful) with(response){
                 when(this.code()){
                     200->movieResult.postValue(this.body())
                 }
             }else{
-                Toast.makeText(app,"Ocurrio un error ",Toast.LENGTH_LONG).show()
+                Toast.makeText(app, "Ocurrio un error", Toast.LENGTH_LONG).show()
             }
         }
     }
 
     fun getMovieResult(): LiveData<Movie> = movieResult
+
 
     fun insert(movie: Movie) = scope.launch {
         repository.insert(movie)

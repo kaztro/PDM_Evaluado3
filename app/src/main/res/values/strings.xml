@@ -5,4 +5,5 @@
     <string name="PLOT">PLOT PLOT PLOT PLOT PLOT PLOT</string>
     <string name="runtime">THE RUNTIME</string>
     <string name="the_year">The Year</string>
+    <string name="no_value">N/A</string>
 </resources>
