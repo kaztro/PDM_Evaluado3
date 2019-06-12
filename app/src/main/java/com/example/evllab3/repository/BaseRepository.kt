@@ -1,4 +1,4 @@
-package me.nelsoncastro.pokeapichingona.Repository
+package com.example.evllab3.repository
 
 import android.util.Log
 import retrofit2.Response

@@ -1,4 +1,4 @@
-package me.nelsoncastro.pokeapichingona.Repository
+package com.example.evllab3.repository
 
 import androidx.annotation.WorkerThread
 import androidx.lifecycle.LiveData
