@@ -2,13 +2,13 @@ package com.example.evllab3.repository
 
 import androidx.annotation.WorkerThread
 import androidx.lifecycle.LiveData
-import me.nelsoncastro.pokeapichingona.Constants.AppConstants
-import me.nelsoncastro.pokeapichingona.Database.Domain.MovieDao
-import me.nelsoncastro.pokeapichingona.Models.Movie
-import me.nelsoncastro.pokeapichingona.Models.MoviePreview
-import me.nelsoncastro.pokeapichingona.Network.OmbdApi
+import com.example.evllab3.dabase.daos.MovieDao
+import com.example.evllab3.dabase.models.Movie
+import com.example.evllab3.dabase.models.MoviePreview
+import com.example.evllab3.networkutils.Omdb
 
-class MovieRepository(private val movieDao: MovieDao, private val api: OmbdApi) : BaseRepository() {
+
+class MovieRepository(private val movieDao: MovieDao, private val api: Omdb) : BaseRepository() {
 
     suspend fun getMoviesByName(name: String) : MutableList<MoviePreview>? {
         val moviesResponse = safeApiCall(
@@ -27,9 +27,9 @@ class MovieRepository(private val movieDao: MovieDao, private val api: OmbdApi) 
     }
 
     @WorkerThread
-    suspend fun insert(movie: Movie) = movieDao.insertMovie(movie)
+    suspend fun insert(movie: Movie) = movieDao.insert(movie)
 
-    fun getAllfromRoomDB():LiveData<List<Movie>> = movieDao.loadAllMovies()
+    fun getAllfromRoomDB():LiveData<List<Movie>> = movieDao.getAll()
 
-    fun getMovieByName(name: String) = movieDao.searchMovieByName(name)
+    fun getMovieByName(name: String) = movieDao.getByTitle(name)
 }
