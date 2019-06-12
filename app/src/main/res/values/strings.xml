@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">EvlLab3</string>
+    <string name="no_value">N/A</string>
 </resources>
