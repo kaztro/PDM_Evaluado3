@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.evllab3.R
 import com.example.evllab3.dabase.models.Movie
+import kotlinx.android.synthetic.main.cardview_movie.view.*
 
 class MovieAdapter(var movies: List<Movie>, val clickListener: (Movie) -> Unit) : RecyclerView.Adapter<MovieAdapter.ViewHolder>(){
 
@@ -29,11 +30,11 @@ class MovieAdapter(var movies: List<Movie>, val clickListener: (Movie) -> Unit) 
             Glide.with(itemView.context)
                 .load(movie.Poster)
                 .placeholder(R.drawable.ic_launcher_background)
-                .into(movie_image_cv)
-            movie_title_cv.text = movie.Title
-            movie_plot_cv.text = movie.Plot
-            movie_rate_cv.text = movie.omdbRating
-            movie_runtime_cv.text = movie.Runtime
+                .into(cv_movie_image)
+            cv_movie_title.text = movie.Title
+            cv_movie_plot.text = movie.Plot
+            cv_movie_rate.text = movie.omdbRating
+            cv_movie_runtime.text = movie.Runtime
             this.setOnClickListener { clickListener(movie) }
         }
     }
