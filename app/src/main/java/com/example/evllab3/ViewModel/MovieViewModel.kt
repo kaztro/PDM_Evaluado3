@@ -9,6 +9,7 @@ import com.example.evllab3.dabase.MovieDataBase
 import com.example.evllab3.dabase.models.Movie
 import com.example.evllab3.dabase.models.MoviePreview
 import com.example.evllab3.networkutils.ApiFactory
+import com.example.evllab3.repository.MovieRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
